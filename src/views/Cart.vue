@@ -203,7 +203,6 @@ export default {
   padding: 3px;
 }
 span {
-  /* border-radius: 25%; */
   margin-left: 5px;
   width: 10px;
   background-color: white;

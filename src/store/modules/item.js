@@ -8,23 +8,6 @@ export default {
     resetCount(state) {
       state.count = 0
     },
-    setProduct(state, payload) {
-      state.products = payload.data
-      if (payload.pagination) {
-        state.totalData = payload.pagination.totalData
-      }
-    },
-    searchMutation(state, payload ) {
-       console.log(payload)
-       state.search = payload
-    },
-    sortProduct(state, payload) {
-      state.sort = payload
-    },
-    ascdscProduct(state, payload) {
-      console.log(payload)
-      state.ascdsc = payload
-    },
     addToCartStore(state, payload) {
         console.log(payload)
       const setCart = {
@@ -37,7 +20,6 @@ export default {
         stock: payload.stuff.stock,
         idStore: payload.store.id
       }
-      
       console.log(setCart)
       const fixedData = [...state.cart, setCart]
       const addedItem = fixedData.find(
@@ -61,23 +43,15 @@ export default {
         value => value.id === payload.id
       )
       incrementData.order_qty += 1
-      // incrementData.product_total = payload.price * payload.order_qty
       state.count += 1
     },
     decrementCountStore(state ) {
       state.count -= 1
     },
   },
-  actions: {},
   getters: {
     getCart(state) {
       return state.cart
-    },
-    getProduct(state) {
-      return state.products
-    },
-    getTotalData(state) {
-      return state.totalData
     },
     getTotalsCart(state) {
       let total = 0

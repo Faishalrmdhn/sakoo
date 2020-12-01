@@ -86,7 +86,6 @@
         ></b-modal
       >
     </b-row>
-    <!-- <div>sadas{{ test }}</div> -->
   </b-container>
 </template>
 
