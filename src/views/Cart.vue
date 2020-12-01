@@ -99,6 +99,9 @@
     <br />
     <br />
     <div class="total">
+      <b-button class="mr-2" size="sm" variant="success" @click="chekOut()"
+        >Check Out
+      </b-button>
       <b-button size="sm" variant="warning" @click="remove()"
         >Remove All</b-button
       >
@@ -177,6 +180,9 @@ export default {
       this.resetCount();
     },
     comingSoon() {
+      alert("This feature will be added soon!");
+    },
+    chekOut() {
       alert("This feature will be added soon!");
     },
   },

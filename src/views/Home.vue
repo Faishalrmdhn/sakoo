@@ -12,9 +12,9 @@
       <b-col
         class="text-center"
         cols="12"
-        sm="6"
-        md="4"
-        lg="4"
+        sm="3"
+        md="3"
+        lg="3"
         v-for="(item, index) in items"
         :key="index"
       >
@@ -205,13 +205,14 @@ export default {
     },
     addToCart(data) {
       this.isAdded = true;
-      console.log(data);
       this.addToCartStore(data);
     },
     getId(data) {
       this.id = data.id;
     },
-    deleteProduct() {},
+    deleteProduct() {
+      alert("This feature will be added soon!");
+    },
   },
 };
 </script>
