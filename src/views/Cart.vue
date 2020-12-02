@@ -7,7 +7,7 @@
         >Keranjang Belanja <span class="badge">{{ count }}</span></b-col
       ></b-row
     >
-    <b-row class="sort mb-2"
+    <b-row v-show="empty" class="sort mb-2"
       ><b-col class="p-0"
         ><b-dropdown variant="danger" size="sm" id="dropdown-1" text="Sort By">
           <b-dropdown-item @click="sortByNameAsc()">Name | A-Z</b-dropdown-item>
@@ -160,10 +160,6 @@ export default {
         }
         return 0;
       });
-
-      arr.forEach((e) => {
-        console.log(e);
-      });
     },
     sortByNameDesc() {
       let arr = this.cart;
@@ -178,10 +174,6 @@ export default {
           return 1;
         }
         return 0;
-      });
-
-      arr.forEach((e) => {
-        console.log(e);
       });
     },
     remove() {
