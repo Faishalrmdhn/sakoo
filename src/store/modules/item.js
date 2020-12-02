@@ -1,6 +1,5 @@
 export default {
   state: {
-    products: [],
     cart: [],
     count: 0,
   },

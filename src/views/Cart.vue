@@ -99,13 +99,17 @@
     <br />
     <br />
     <div class="total">
-      <b-button class="mr-2" size="sm" variant="success" @click="chekOut()"
-        >Check Out
-      </b-button>
-      <b-button size="sm" variant="warning" @click="remove()"
-        >Remove All</b-button
-      >
-      <strong> Total: Rp.{{ formatPrice(totals) }}</strong>
+      <div class="row1">
+        <b-button class="mr-2" size="sm" variant="success" @click="checkOut()"
+          >Check Out
+        </b-button>
+        <b-button size="sm" variant="warning" @click="remove()"
+          >Remove All</b-button
+        >
+      </div>
+      <div v-show="empty" class="row2">
+        <strong> Total: Rp.{{ formatPrice(totals) }}</strong>
+      </div>
     </div>
   </b-container>
 </template>
@@ -116,6 +120,11 @@ export default {
   name: "Cart",
   created() {
     this.cart;
+  },
+  data() {
+    return {
+      empty: true,
+    };
   },
   computed: {
     ...mapState(["count"]),
@@ -178,11 +187,12 @@ export default {
     remove() {
       this.cart.length = 0;
       this.resetCount();
+      this.empty = false;
     },
     comingSoon() {
       alert("This feature will be added soon!");
     },
-    chekOut() {
+    checkOut() {
       alert("This feature will be added soon!");
     },
   },
@@ -225,7 +235,7 @@ span {
   bottom: 0%;
   left: 0%;
   width: 100%;
-  height: 35px;
+  height: auto;
   background-color: rgb(215, 18, 73);
   z-index: 2;
   text-align: right;
